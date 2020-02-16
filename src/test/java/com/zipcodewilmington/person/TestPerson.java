@@ -1,14 +1,16 @@
 package com.zipcodewilmington.person;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import sun.security.x509.OtherName;
 
 
 /**
  * Created by leon on 2/12/18.
  */
 public class TestPerson {
+
+
     @Test
     public void testDefaultConstructor() {
         // Given
@@ -99,17 +101,17 @@ public class TestPerson {
     }
     @Test
     public void testConstructorWithHairColor (){
-
-        String expected = "";
-        Person person = new Person(expected);
-
+        //when
+        Person person = new Person();
+         person.setHairColor("red");
+        //then
         String actual = person.getHairColor();
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals("red", actual);
     }
     @Test
-    public void setHairColor (){
+    public void testSetHairColor (){
         Person person = new Person();
-        String expected = "";
+        String expected = "blue";
 
         person.setHairColor(expected);
 
@@ -127,7 +129,7 @@ public class TestPerson {
         Assert.assertEquals(true, true);
     }
     @Test
-    public void setAllAppendages (){
+    public void testSetAllAppendages (){
         //given
         Person person = new Person();
         Boolean expected = true;
@@ -138,7 +140,68 @@ public class TestPerson {
         Assert.assertEquals(true, true);
     }
 
+   @Test
+    public void testConstructorWithEyeColor(){
 
+        //when
+        Person person = new Person();
+        person.setEyeColor("purple");
+        //then
+        String actual = person.getEyeColor();
+        Assert.assertEquals("purple", actual);
+    }
 
+    @Test
+    public void testSetEyeColor(){
+        //given
+        Person person = new Person();
 
+        person.setEyeColor("blue");
+        //then
+        String actual = person.getEyeColor();
+        Assert.assertEquals("blue", actual);
+    }
+
+    @Test
+    public void testConstructorWithSHoeSize(){
+        //given
+        Person person = new Person();
+        person.setShoeSize(13);
+
+        //then
+        Integer actual = person.getShoeSize();
+        Assert.assertTrue(13 == actual);
+
+    }
+    @Test
+    public void testSetShoeSize(){
+        //when
+        Person person = new Person();
+        person.setShoeSize(13);
+        //then
+        Integer actual = person.getShoeSize();
+        Assert.assertTrue(13 == actual);
+    }
+
+    @Test
+    public void testGetAndSetWithSchoolYear(){
+        //given
+        Person person = new Person();
+        person.setSchoolYear(10);
+
+        //then
+        Integer actual = person.getSchoolYear();
+        Assert.assertTrue(10 == actual);
+
+    }
+
+    /*@Test
+    public void testTest(){
+        //given
+
+        //when
+
+        //then
+        Assert.assertEquals(1, 2);
+    }*/
 }
