@@ -7,9 +7,14 @@ public class Person {
     private String name;
     private int age;
 
+    private String hairColor;
+    private Boolean allAppendages;
+
+
 
     public Person() {
-        
+    this.name = "";
+    this.age = Integer.MAX_VALUE;
     }
 
 
@@ -17,7 +22,7 @@ public class Person {
         this.age = age;
     }
 
-    public Person(String name) {
+   public Person(String name) {
         this.name = name;
     }
 
@@ -42,4 +47,22 @@ public class Person {
     public Integer getAge() {
         return this.age;
     }
+
+    public void setHairColor(String hairColor){
+        this.hairColor = hairColor;
+    }
+
+    public String getHairColor(){
+        return this.hairColor;
+    }
+
+    public void setAllAppendages(Boolean allAppendages){
+        this.allAppendages = allAppendages;
+    }
+
+    public Boolean getAllAppendages() {
+        return this.allAppendages;
+    }
+
+
 }

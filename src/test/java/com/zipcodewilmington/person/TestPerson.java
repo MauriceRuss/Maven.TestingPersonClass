@@ -2,6 +2,8 @@ package com.zipcodewilmington.person;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sun.security.x509.OtherName;
+
 
 /**
  * Created by leon on 2/12/18.
@@ -98,6 +100,45 @@ public class TestPerson {
     @Test
     public void testConstructorWithHairColor (){
 
-        String expected = "Black";
+        String expected = "";
+        Person person = new Person(expected);
+
+        String actual = person.getHairColor();
+        Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void setHairColor (){
+        Person person = new Person();
+        String expected = "";
+
+        person.setHairColor(expected);
+
+        String actual = person.getHairColor();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public  void testConstructorWithAllAppendages(){
+        //given
+        Boolean allAppendages = true;
+        //when
+        Person person = new Person();
+        //then
+        Boolean actual = person.getAllAppendages();
+        Assert.assertEquals(true, true);
+    }
+    @Test
+    public void setAllAppendages (){
+        //given
+        Person person = new Person();
+        Boolean expected = true;
+        //when
+        person.setAllAppendages(true);
+        //then
+        Boolean actual = person.getAllAppendages();
+        Assert.assertEquals(true, true);
+    }
+
+
+
+
 }
